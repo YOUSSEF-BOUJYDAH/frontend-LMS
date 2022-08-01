@@ -1,0 +1,44 @@
+
+
+<div class="container">
+  <mat-card class=" col-md-8 mt-5 offset-md-2" >
+    <button class="btn btn-danger mb-3" [routerLink]="['/admin/addFiliere']"
+      routerLinkActive="router-link-active">AjouterFiliere</button>
+
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let i of filieres" (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{i.titre}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{i.diplome}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="row justify-content-end">
+    <button class="col-2" mat-raised-button>Editer</button>
+    <div class="col-1"></div>
+    <button class="col-2" mat-raised-button color="accent" [routerLink]="['/admin/detailFiliere']" >Consulter</button>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card>
+</div>
+
+
+
+<!--button mat-raised-button (click)="addColumn()"> Add filiere </button>
+<button mat-raised-button (click)="removeColumn()"> Remove column </button>
+<button mat-raised-button (click)="shuffle()"> Shuffle </button>
+
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table-->
+

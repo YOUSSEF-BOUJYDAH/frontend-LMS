@@ -1,0 +1,20 @@
+<div class="container">   
+<mat-card   class="col-md-5 mt-5 mx-auto mt-offset-md-4">
+    <form [formGroup]="addGroup" (ngSubmit)="handleAddFiliere()">
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Intitule de filiere</mat-label>
+          <input matInput placeholder="Intitule" formControlName="titre">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Diplome</mat-label>
+          <input matInput placeholder="Intitule" formControlName="diplome">
+        </mat-form-field>
+      </p>
+      
+      <button type="submit" class="btn btn-primary"> valider</button>
+      </form>
+    </mat-card>
+  </div>

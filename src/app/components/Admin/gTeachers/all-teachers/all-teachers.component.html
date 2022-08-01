@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row ">
+      <div class="col-11 ">
+        <h1>your classes </h1>
+      </div>
+      <div class="col-1  ">
+        <button routerLink="/admin/addProf" class="btn btn-primary shadow-lg p-3 mb-5  rounded ">
+          <i class="bi bi-plus"></i>
+        </button>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col">
+      <div class="container">
+        <div class="row row-cols-3">
+          <div *ngFor="let c of teachers " class="col">
+            <div class="card mt-3 shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{c.username}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{c.password}}</h6>
+                <p class="card-text">{{c.cin}}</p>
+                <button class="btn btn-info mr-3" [routerLink]="['/admin/editProf',c.id]"><i class="bi bi-gear" ></i></button>
+                <button class="btn btn-danger mr-3" (click)="handleDeleteTeacher(c.id)"><i
+                    class="bi bi-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>

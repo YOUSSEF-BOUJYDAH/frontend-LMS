@@ -1,0 +1,84 @@
+<!--div class="container">
+<div class="card text-center " >
+  <div class="card-header">
+    tables des classes
+  </div>
+ 
+  <div class="card-body  ">
+    <!-- form  [formGroup]="searchFormGroup"  (ngSubmit)="handleSearchClasse()">
+      <div class="input-group">
+           <label class="input-group-text">Kyword :</label>
+           <input type="text" class="form-control" formControlName="keyword">
+           <button class="btn btn-info">
+             <i class="bi bi-search" >
+             </i>
+           </button>
+      </div>
+    </form >
+ <table class="table ">
+     <thead class="thead-inverse">
+         <tr>
+             <th>Id</th>
+             <th>name</th>
+             <th>nombre</th>
+         </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let c of classes ">
+                 <td scope="row">{{c.id}}</td>
+                 <td>{{c.name}}</td>
+                 <td>{{c.nombre}}</td> 
+                 <!--td><i *ngIf="c.promotion==true" class="bi bi-heart-fill text-success"></i></td>
+                 <td><button (click)="changePromotion(c)" [ngClass]="c.promotion==true?'btn-danger':'btn-success'" class="btn ">
+                   <span *ngIf="c.promotion==true"> promo off </span>
+                   <span *ngIf="c.promotion==false"> promo on </span>
+                 </button></td>
+                 <td><button (click)="handleDeleteClasse(c)" class="btn btn-danger"><i class="bi bi-trash"></i></button></td >
+                 
+                </tr>
+            
+         </tbody>
+ </table>
+ <ul class="nav nav-pills">
+   <li *ngFor="let index of [].constructor(this.totalPages) ; let i=index">
+     <a (click)="goToPage(i)" [ngClass]="i==CurrentPage? 'btn-info':'btn-outline-info'" class="btn  ms-2">{{i}}</a> 
+    </li>
+ </ul>
+  </div>
+</div>
+</div-->
+<!-- Card -->
+<div class="container">
+  <div class="row ">
+    <div class="col-11 ">
+      <h1>your classes </h1>
+    </div>
+    <div class="col-1  ">
+      <button routerLink="/admin/add" class="btn btn-primary shadow-lg p-3 mb-5  rounded ">
+        <i class="bi bi-plus"></i>
+      </button>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col">
+    <div class="container">
+      <div class="row row-cols-3">
+        <div *ngFor="let c of classes " class="col">
+          <div class="card mt-3 shadow-lg p-3 mb-5 bg-body rounded" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{c.name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{c.nombre}}</h6>
+              <p class="card-text">{{c.description}}</p>
+              <button class="btn btn-info mr-3"><i class="bi bi-gear" [routerLink]="['/admin/edit',c.id]"></i></button>
+              <button class="btn btn-danger mr-3" (click)="handleDeleteClasse(c.id)"><i
+                  class="bi bi-trash"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+ 
+</div>
